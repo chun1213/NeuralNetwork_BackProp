@@ -13,7 +13,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.commons.math3.linear.*;
 
-
+//NN Basic Backpropogation Network
+//By Chunfeng Li
+//Released 07/30/2020
+//the best % I got in the Mnist was 96.99% on the test set, you can probably get higher if you set better parameters
 
 public class main {
 	int evonum=50;
