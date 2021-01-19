@@ -50,7 +50,7 @@ public class main {
 		 
 		 for (int x=0;x<trainingSize;x++) {
 			 System.out.println(x);
-			 //Gets training data ThreadLocalRandom.current().nextInt(0, 59999 + 1)
+			 //Gets training data 
 			 MnistMatrix matrix=mnistMatrix[x];
 			  int label=matrix.getLabel();
 			  //gets the answer Array
