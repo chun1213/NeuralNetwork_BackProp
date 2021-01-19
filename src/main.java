@@ -80,15 +80,7 @@ public class main {
 			 for (int i=0;i<output.length;i++) {
 				 tempcost=answer[i]-output[i];
 				 cost[i]=tempcost;
-			 }
-	
-//			 System.out.print(Arrays.toString(output));
-//			 double avgCost=0;
-//			 for (int i=0;i<cost.length;i++) {
-//				 avgCost+=cost[i];
-//			 }
-//			 avgCost=avgCost/cost.length;
-			 //System.out.println(avgCost);
+			 }	
 			
 			 if (label==getAnswer(output)) {
 				 System.out.println(true);
@@ -103,23 +95,9 @@ public class main {
 			 
 			 RealMatrix Cost = new Array2DRowRealMatrix(cost);
 			 
-			 
+			//MAKE SURE TO COMMENT THIS entire training section OUT WHEN TESTing ASWELL OR THE NETWORK WILL CONTINUE TO LEARN//////////////////////////////
 			//derivative sigmoid output 
 			 double dOutput[][]= dSigmoid(output);
-//			 RealMatrix dOutputM = new Array2DRowRealMatrix(dOutput);
-			 
-			 //getting gradient
-			 
-			 
-			 
-//			 System.out.println(Arrays.toString(output));
-			 
-			 
-			 
-			 
-			 
-			 
-			 
 			 
 			 
 			 double[][] gradient=Multiply(Cost.getData(),dOutput);
@@ -158,7 +136,7 @@ public class main {
 			 
 			 
 			 ArrayList<Node> currentNodes =networkLayers.get(networkLayers.size()-1).getNodes();
-			 
+			
 			 //Changes the values
 			 for (int j=0;j<prevNodes.size();j++) {
 				 double[] deltas=gradientM.getColumn(j);
@@ -185,7 +163,8 @@ public class main {
 			 
 			 
 			 
-			 //Loops for each layer of the neural network except the last
+			 //Loops for each layer of the neural network except the last 
+			 //starts at the second last layer
 			 for (int i=networkLayers.size()-2;i>0;i-- ) {
 				 
 				 //Obtains the nodes in that layer and previous
@@ -260,7 +239,7 @@ public class main {
 				 
 			 }
 //			 System.out.println(Arrays.toString(cost));
-			 
+//			 COMMENT ALL THE WAY TO HERE WHEN TESTING///////////////////////////////////////////////////////////////////////////////////
 		 }
 		 
 		 //just comment this line out when using the test set!
